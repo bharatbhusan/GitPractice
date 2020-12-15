@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="DockerEC2Demo" thread-count="5" parallel="classes">
+	<test name="FirefoxDemo" parallel="tests">
+		<parameter name="browser" value="firefox"></parameter>
+		<groups>
+			<run>
+				<exclude name="sequential-test"></exclude>
+			</run>
+		</groups>
+		<classes>
+			<class name="dockerdemo.TestNG_1" />
+			<class name="dockerdemo.TestNG_2" />
+
+		</classes>
+	</test>
+	<test name="ChromeDemo" parallel="false">
+		<parameter name="browser" value="chrome" />
+		<groups>
+			<run>
+				<include name="sequential-test"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="dockerdemo.TestNG_1" />
+			<class name="dockerdemo.TestNG_2" />
+		</classes>
+	</test>
+</suite>

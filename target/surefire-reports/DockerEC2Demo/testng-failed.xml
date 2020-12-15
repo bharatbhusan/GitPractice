@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [DockerEC2Demo]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" parallel="tests" name="ChromeDemo(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="dockerdemo.FirefoxDemo">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="getTitle"/>
+        </methods>
+      </class> <!-- dockerdemo.FirefoxDemo -->
+    </classes>
+  </test> <!-- ChromeDemo(failed) -->
+  <test thread-count="5" parallel="tests" name="FirefoxDemo(failed)" verbose="0">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="dockerdemo.FirefoxDemo">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="getTitle"/>
+        </methods>
+      </class> <!-- dockerdemo.FirefoxDemo -->
+    </classes>
+  </test> <!-- FirefoxDemo(failed) -->
+</suite> <!-- Failed suite [DockerEC2Demo] -->
